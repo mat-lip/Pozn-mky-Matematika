@@ -105,117 +105,139 @@
   }
 
   /* ── NAV ── */
-  nav {
-    background: var(--section-bg);
-    border-bottom: 2px solid var(--line);
-    position: sticky;
-    top: 0;
-    z-index: 200;
-    box-shadow: var(--card-shadow);
-    transition: background .3s;
-  }
-  .nav-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 16px;
-    height: var(--nav-h);
-  }
-  .nav-title {
-    font-family: 'Playfair Display', serif;
-    font-size: .95rem;
-    font-weight: 700;
-    color: var(--ink);
-  }
-  .nav-controls {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-  }
-
-  /* Theme toggle */
   .theme-toggle {
     background: none;
     border: 1.5px solid var(--line);
     border-radius: 4px;
-    width: 36px; height: 36px;
+    width: 34px; height: 34px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: .95rem;
     display: flex; align-items: center; justify-content: center;
     color: var(--ink);
     transition: all .2s;
     -webkit-tap-highlight-color: transparent;
+    flex-shrink: 0;
   }
-  .theme-toggle:hover { background: var(--ink); color: var(--paper); }
+  .theme-toggle:hover { background: var(--line); }
 
-  /* Hamburger button */
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
+  nav {
+    background: var(--section-bg);
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    transition: background .3s;
+  }
+
+  /* Horná lišta */
+  .nav-bar {
+    display: flex;
     align-items: center;
-    gap: 5px;
-    width: 40px; height: 40px;
+    gap: 8px;
+    padding: 0 12px;
+    height: var(--nav-h);
+  }
+  .nav-title {
+    font-family: 'Playfair Display', serif;
+    font-size: .9rem;
+    font-weight: 700;
+    color: var(--ink);
+    flex: 1;
+  }
+  .nav-controls { display: flex; gap: 6px; align-items: center; }
+
+  /* Tlačidlo na skrytie/zobrazenie linkov */
+  .nav-toggle-links {
     background: none;
     border: 1.5px solid var(--line);
     border-radius: 4px;
+    width: 34px; height: 34px;
     cursor: pointer;
-    padding: 6px;
+    font-size: .85rem;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--muted);
+    transition: all .2s;
+    -webkit-tap-highlight-color: transparent;
+    flex-shrink: 0;
   }
-  .hamburger span {
-    display: block;
-    width: 22px; height: 2px;
-    background: var(--ink);
-    border-radius: 2px;
-    transition: all .25s;
-  }
-  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .hamburger.open span:nth-child(2) { opacity: 0; }
-  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-toggle-links:hover { background: var(--line); color: var(--ink); }
 
-  /* Nav links */
+  /* Linky */
   .nav-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
-    padding: 12px 16px;
-    justify-content: center;
+    gap: 5px;
+    padding: 8px 12px;
     border-top: 1px solid var(--line);
+    justify-content: center;
+    transition: max-height .25s ease, padding .25s ease, opacity .2s ease;
+    max-height: 200px;
+    opacity: 1;
+    overflow: hidden;
+  }
+  .nav-links.hidden {
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    opacity: 0;
+    border-top-color: transparent;
+    pointer-events: none;
   }
   .nav-links a {
     text-decoration: none;
     color: var(--muted);
-    font-size: .78rem;
+    font-size: .75rem;
     font-weight: 600;
     letter-spacing: .04em;
     text-transform: uppercase;
-    padding: 5px 10px;
+    padding: 4px 9px;
     border: 1.5px solid var(--line);
     border-radius: 3px;
-    transition: all .2s;
+    transition: background .15s, color .15s, border-color .15s;
     white-space: nowrap;
     -webkit-tap-highlight-color: transparent;
     position: relative;
   }
-  .nav-links a:hover,
-  .nav-links a:active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
-  /* Active nav link */
-  .nav-links a.nav-active {
-    background: var(--accent);
-    color: #222831;
-    border-color: var(--accent);
-  }
-  /* Bookmarked indicator on nav */
+  .nav-links a:hover { background: var(--line); color: var(--ink); border-color: var(--line); }
+  .nav-links a.nav-active { background: var(--line); color: var(--accent); border-color: var(--line); font-weight: 700; }
   .nav-links a.nav-bookmarked::after {
     content: '★';
     position: absolute;
     top: -5px; right: -5px;
-    font-size: .55rem;
+    font-size: .5rem;
     color: var(--gold);
     background: var(--paper);
     border-radius: 50%;
-    line-height: 1;
     padding: 1px;
+    line-height: 1;
+  }
+
+  /* Mobile: linky v stĺpci */
+  @media (max-width: 640px) {
+    .nav-links {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      max-height: 55vh;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      gap: 2px;
+    }
+    .nav-links.hidden { max-height: 0; overflow: hidden; }
+    .nav-links a {
+      border: none;
+      border-radius: 4px;
+      padding: 9px 10px;
+      font-size: .85rem;
+      text-transform: none;
+      letter-spacing: 0;
+      white-space: normal;
+    }
+    .concept { padding-left: 10px; }
+    header { padding: 28px 16px 20px; }
+    .section { margin-top: 36px; padding-top: 20px; }
+    .rule-box, .example { font-size: .88rem; }
+    div[style*="display:flex"] { flex-wrap: wrap !important; }
+    #bookmarks-panel { display: none; }
   }
 
   /* ── MAIN ── */
@@ -287,25 +309,50 @@
   #bookmarks-panel {
     position: fixed;
     top: 50%;
-    right: 16px;
+    right: 0;
     transform: translateY(-50%);
     z-index: 150;
     display: flex;
     flex-direction: column;
-    gap: 4px;
-    max-height: 70vh;
+    gap: 3px;
+    padding: 6px 0;
+    max-height: 80vh;
     overflow-y: auto;
+    overflow-x: visible;
+    scrollbar-width: none;
   }
+  #bookmarks-panel::-webkit-scrollbar { display: none; }
   .bm-dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    background: var(--gold);
-    opacity: 0.5;
+    position: relative;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px 0 0 6px;
+    background: #2c3039;
+    border: 1px solid #393e46;
+    border-right: none;
     cursor: pointer;
-    transition: opacity .2s, transform .2s;
-    border: none;
+    transition: background .15s, width .15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #948979;
+    font-size: .65rem;
+    font-weight: 700;
+    font-family: monospace;
+    letter-spacing: 0;
+    overflow: hidden;
+    white-space: nowrap;
   }
-  .bm-dot:hover, .bm-dot.active { opacity: 1; transform: scale(1.5); }
+  .bm-dot:hover {
+    background: #393e46;
+    color: #dfd0b8;
+    width: 52px;
+  }
+  .bm-dot.active {
+    background: #393e46;
+    color: #dfd0b8;
+    border-color: #948979;
+  }
 
   .concept {
     margin-bottom: 24px;
@@ -516,24 +563,14 @@
   }
   .func-info strong { color: var(--ink); font-style: normal; }
 
-  /* ── MOBILE ── */
+  /* ── MOBILE content ── */
   @media (max-width: 640px) {
-    .hamburger { display: flex; }
-    .nav-links { display: none; padding: 10px 14px; }
-    .nav-links.open { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
-    .nav-links a { font-size: .82rem; padding: 8px 12px; width: 100%; }
     .concept { padding-left: 10px; }
     header { padding: 28px 16px 20px; }
     .section { margin-top: 36px; padding-top: 20px; }
     .rule-box, .example { font-size: .88rem; }
     div[style*="display:flex"] { flex-wrap: wrap !important; }
     #bookmarks-panel { display: none; }
-  }
-
-  /* ── DESKTOP: nav links always visible ── */
-  @media (min-width: 641px) {
-    .nav-bar { display: none; }
-    .nav-links { display: flex !important; border-top: none; }
   }
 </style>
 </head>
@@ -547,14 +584,12 @@
   <p>Poznámky k zadaniam 1 – 30 &nbsp;·&nbsp; Stredná škola</p>
 </header>
 
-<nav>
+<nav id="mainNav">
   <div class="nav-bar">
     <span class="nav-title">📐 Matematika</span>
     <div class="nav-controls">
-      <button class="theme-toggle" id="themeToggle" aria-label="Prepnúť tému" title="Prepnúť svetlý/tmavý režim">🌙</button>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Prepnúť tému" title="Svetlý/tmavý režim">🌙</button>
+      <button class="nav-toggle-links" id="navToggle" aria-label="Skryť/zobraziť témy" title="Skryť/zobraziť témy">▲</button>
     </div>
   </div>
   <div class="nav-links" id="navLinks">
@@ -2768,17 +2803,28 @@ themeBtn.addEventListener('click', () => {
   if (document.getElementById('funcCanvas')) drawFunc(currentFn);
 });
 
-// ── HAMBURGER ──
-const ham = document.getElementById('hamburger');
+// ── NAV TOGGLE ──
+const navToggleBtn = document.getElementById('navToggle');
 const links = document.getElementById('navLinks');
-ham.addEventListener('click', () => {
-  ham.classList.toggle('open');
-  links.classList.toggle('open');
+let navLinksVisible = true;
+
+navToggleBtn.addEventListener('click', () => {
+  navLinksVisible = !navLinksVisible;
+  links.classList.toggle('hidden', !navLinksVisible);
+  navToggleBtn.textContent = navLinksVisible ? '▲' : '▼';
+  navToggleBtn.title = navLinksVisible ? 'Skryť témy' : 'Zobraziť témy';
+  localStorage.setItem('math-nav-visible', navLinksVisible ? '1' : '0');
 });
-function closeNav() {
-  ham.classList.remove('open');
-  links.classList.remove('open');
+
+// Restore saved state
+if (localStorage.getItem('math-nav-visible') === '0') {
+  navLinksVisible = false;
+  links.classList.add('hidden');
+  navToggleBtn.textContent = '▼';
+  navToggleBtn.title = 'Zobraziť témy';
 }
+
+function closeNav() {}
 
 // ── BACK TO TOP ──
 const btn = document.getElementById('backTop');
@@ -2834,10 +2880,18 @@ function renderBookmarks() {
   bookmarks.forEach(id => {
     const dot = document.createElement('button');
     dot.className = 'bm-dot';
-    dot.title = 'Zadanie ' + id.replace('z','');
-    dot.setAttribute('aria-label', 'Preskočiť na ' + id);
-    dot.addEventListener('click', () => {
-      document.getElementById(id)?.scrollIntoView({behavior:'smooth', block:'start'});
+    const num = id.replace('z','');
+    dot.title = 'Zadanie ' + num;
+    dot.textContent = num;
+    dot.setAttribute('aria-label', 'Preskočiť na zadanie ' + num);
+    dot.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const target = document.getElementById(id);
+      if (target) {
+        const navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 52;
+        const top = target.getBoundingClientRect().top + window.scrollY - navH - 12;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
     });
     panel.appendChild(dot);
   });

@@ -1932,8 +1932,8 @@
       <tbody>
         <tr><td><strong>Štvorec</strong></td><td>4 rovnaké strany, 4 pravé uhly, uhlopriečky rovnaké, kolmé, navzájom sa rozpoľujú</td><td>4a</td><td>a²</td></tr>
         <tr><td><strong>Obdĺžnik</strong></td><td>2 páry rovnobežných rovnakých strán, 4 pravé uhly, uhlopriečky rovnaké, navzájom sa rozpoľujú</td><td>2(a+b)</td><td>a·b</td></tr>
-        <tr><td><strong>Kosoštvorec</strong></td><td>4 rovnaké strany, protiľahlé uhly rovnaké, uhlopriečky kolmé a navzájom sa rozpoľujú</td><td>4a</td><td>e·f/2 alebo a·h</td></tr>
-        <tr><td><strong>Kosodĺžnik</strong></td><td>2 páry rovnobežných rovnakých strán, protiľahlé uhly rovnaké, uhlopriečky sa rozpoľujú</td><td>2(a+b)</td><td>a·h</td></tr>
+        <tr><td><strong>Kosoštvorec</strong></td><td>4 rovnaké strany, protiľahlé uhly rovnaké, uhlopriečky kolmé a navzájom sa rozpoľujú</td><td>4a</td><td>e·f/2 alebo a·v</td></tr>
+        <tr><td><strong>Kosodĺžnik</strong></td><td>2 páry rovnobežných rovnakých strán, protiľahlé uhly rovnaké, uhlopriečky sa rozpoľujú</td><td>2(a+b)</td><td>a·v</td></tr>
         <tr><td><strong>Lichobežník</strong></td><td>Práve jeden pár rovnobežných strán (základne a, c)</td><td>a+b+c+d</td><td>(a+c)/2 · h</td></tr>
         <tr><td><strong>Deltoid</strong></td><td>Dve dvojice susedných rovnakých strán, jedna uhlopriečka je osou súmernosti</td><td>2(a+b)</td><td>e·f/2</td></tr>
         <tr><td><strong>Všeob. štvoruholník</strong></td><td>Žiadne špeciálne vlastnosti</td><td>a+b+c+d</td><td>rozdeliť na △</td></tr>
@@ -2414,12 +2414,20 @@
   <div class="concept">
     <div class="concept-name">Všeobecná rovnica priamky</div>
     <div class="rule-box">
-      <h4>ax + by + c = 0 &nbsp;·&nbsp; kde a, b, c ∈ ℝ, a² + b² ≠ 0</h4>
-      Normálový vektor priamky: n⃗ = (a, b)<br>
-      Smerový vektor: u⃗ = (−b, a)
+      <h4>ax + by + c = 0, &nbsp; kde a, b, c ∈ ℝ, &nbsp; a² + b² ≠ 0</h4>
+      <strong>Normálový vektor</strong> priamky: <strong>n</strong> = (a, b) — kolmý na priamku<br>
+      <strong>Smerový vektor</strong>: <strong>u</strong> = (−b, a) — rovnobežný s priamkou
     </div>
-    <div class="example"><strong>Príklady</strong>
-      2x + 3y − 6 = 0 &nbsp;·&nbsp; x − y + 1 = 0 &nbsp;·&nbsp; y = 4 (vodorovná priamka: 0·x + 1·y − 4 = 0)
+    <div class="example"><strong>Príklad 1 – identifikácia vektorov</strong>
+      Priamka p: 2x − 3y + 6 = 0<br>
+      a = 2, b = −3, c = 6<br>
+      Normálový vektor: <strong>n</strong> = (2, −3)<br>
+      Smerový vektor: <strong>u</strong> = (3, 2)<br>
+      Overenie kolmosti: <strong>n</strong> · <strong>u</strong> = 2·3 + (−3)·2 = 6 − 6 = 0 ✓
+    </div>
+    <div class="example"><strong>Príklad 2 – špeciálne priamky</strong>
+      Zvislá priamka x = 4: zapíšeme ako 1·x + 0·y − 4 = 0 → n = (1, 0), u = (0, 1)<br>
+      Vodorovná priamka y = −2: zapíšeme ako 0·x + 1·y + 2 = 0 → n = (0, 1), u = (1, 0)
     </div>
   </div>
 
@@ -2427,45 +2435,86 @@
     <div class="concept-name">Smernicový tvar rovnice priamky</div>
     <div class="rule-box">
       <h4>y = kx + q</h4>
-      k = smernica (tg uhla, ktorý zviera priamka s kladnou osou x)<br>
-      q = absolútny člen (priesečník s osou y)
+      <strong>k</strong> = smernica = tan α, kde α je uhol, ktorý zviera priamka s kladnou osou x<br>
+      <strong>q</strong> = absolútny člen = y-súradnica priesečníka s osou y (ak x = 0)<br>
+      Pozor: zvislá priamka (x = konšt.) smernicový tvar <em>nemá</em> (k by bolo ±∞)
     </div>
-    <div class="example"><strong>Príklady</strong>
-      y = 2x + 3 (k=2, q=3) &nbsp;·&nbsp; y = −x + 1 (k=−1, q=1)
+    <div class="example"><strong>Príklad 1 – čítanie vlastností</strong>
+      y = −2x + 5 → k = −2 (klesá, uhol α = 180° − arctan 2 ≈ 116,6°), q = 5<br>
+      Priesečník s osou x: 0 = −2x + 5 → x = 2,5 → bod T = [2,5; 0]<br>
+      Priesečník s osou y: bod Q = [0; 5]
+    </div>
+    <div class="example"><strong>Príklad 2 – z všeobecného tvaru</strong>
+      4x − 2y + 8 = 0 &nbsp;|÷(−2) &nbsp;→ y = 2x + 4 &nbsp;→ k = 2, q = 4
     </div>
   </div>
 
   <div class="concept">
-    <div class="concept-name">Rovnica priamky cez 2 body</div>
+    <div class="concept-name">Rovnica priamky prechádzajúcej dvoma bodmi</div>
     <div class="rule-box">
-      <h4>(y − y₁) / (y₂ − y₁) = (x − x₁) / (x₂ − x₁)</h4>
+      <h4>Krok 1: k = (y₂ − y₁) / (x₂ − x₁)</h4>
+      <h4 style="margin-top:6px">Krok 2: y − y₁ = k(x − x₁)</h4>
+      Podmienka: x₁ ≠ x₂ (inak je priamka zvislá: x = x₁)
     </div>
-    <div class="example"><strong>Príklad</strong>
-      Body A=[1,2], B=[3,6]: k=(6−2)/(3−1)=2 → y−2=2(x−1) → y = 2x
+    <div class="example"><strong>Príklad – postup krok za krokom</strong>
+      Dané body: A = [−1; 3], B = [3; −5]<br>
+      k = (−5 − 3) / (3 − (−1)) = −8 / 4 = −2<br>
+      y − 3 = −2(x − (−1)) → y − 3 = −2x − 2 → <strong>y = −2x + 1</strong><br>
+      Overenie: A: y = −2·(−1) + 1 = 3 ✓ &nbsp; B: y = −2·3 + 1 = −5 ✓
     </div>
   </div>
 
   <div class="concept">
     <div class="concept-name">Rovnobežné a kolmé priamky</div>
     <div class="rule-box">
-      <h4>Rovnobežné priamky: k₁ = k₂ &nbsp;(ale q₁ ≠ q₂)</h4>
-      <h4 style="margin-top:8px">Kolmé priamky: k₁ · k₂ = −1 &nbsp;·&nbsp; teda k₂ = −1/k₁</h4>
+      <h4>Rovnobežnosť: k₁ = k₂ &nbsp;(a zároveň q₁ ≠ q₂, inak sú totožné)</h4>
+      <h4 style="margin-top:6px">Kolmosť: k₁ · k₂ = −1, &nbsp; čiže k₂ = −1 / k₁</h4>
     </div>
-    <div class="example"><strong>Príklady</strong>
-      Rovnobežné: y = 3x + 1 a y = 3x − 4 (k=3 oba)<br>
-      Kolmé: y = 2x + 1 a y = −½x + 3 (2 · (−½) = −1 ✓)
+    <div class="example"><strong>Príklad 1 – rovnobežná priamka cez bod</strong>
+      Priamka p: y = 3x − 7. Nájdi rovnobežnú cez bod P = [2; 1].<br>
+      Rovnobežná má rovnakú smernicu: k = 3<br>
+      y − 1 = 3(x − 2) → y = 3x − 5<br>
+      Overenie: oba k = 3 ✓, &nbsp; q: −7 ≠ −5 ✓ (nie sú totožné)
+    </div>
+    <div class="example"><strong>Príklad 2 – kolmá priamka cez bod</strong>
+      Priamka q: y = 2x + 4. Nájdi kolmú cez bod Q = [4; −1].<br>
+      k₂ = −1/2<br>
+      y − (−1) = −½(x − 4) → y + 1 = −½x + 2 → y = −½x + 1<br>
+      Overenie: 2 · (−½) = −1 ✓
     </div>
   </div>
 
   <div class="concept">
     <div class="concept-name">Vzdialenosť bodu od priamky</div>
     <div class="rule-box">
-      <h4>d = |ax₀ + by₀ + c| / √(a² + b²)</h4>
-      (pre bod P=[x₀, y₀] a priamku ax+by+c=0)
+      <h4>d(P, p) = |a·x₀ + b·y₀ + c| / √(a² + b²)</h4>
+      kde P = [x₀, y₀] je bod a p: ax + by + c = 0 je priamka
     </div>
-    <div class="example"><strong>Príklad</strong>
-      Priamka 3x − 4y + 5 = 0, bod P=[1,1]:<br>
-      d = |3·1 − 4·1 + 5| / √(9+16) = |4| / 5 = <strong>4/5 = 0,8</strong>
+    <div class="example"><strong>Príklad 1 – vzdialenosť bodu</strong>
+      Priamka p: 3x − 4y + 10 = 0, bod P = [2; −1]<br>
+      d = |3·2 + (−4)·(−1) + 10| / √(3² + (−4)²)<br>
+      d = |6 + 4 + 10| / √(9 + 16)<br>
+      d = |20| / √25 = 20 / 5 = <strong>4</strong>
+    </div>
+    <div class="example"><strong>Príklad 2 – vzdialenosť dvoch rovnobežiek</strong>
+      p₁: 2x + y − 3 = 0 a p₂: 2x + y + 7 = 0 (rovnobežné, lebo rovnaké a, b)<br>
+      Vezmi ľubovoľný bod z p₁, napr. x = 0 → y = 3 → bod A = [0; 3]<br>
+      d = |2·0 + 1·3 + 7| / √(4 + 1) = |10| / √5 = 10/√5 = 2√5 ≈ <strong>4,47</strong>
+    </div>
+  </div>
+
+  <div class="concept">
+    <div class="concept-name">Stredový uhol a os úsečky</div>
+    <div class="rule-box">
+      <h4>Stred úsečky AB: S = [(x₁ + x₂)/2 ; (y₁ + y₂)/2]</h4>
+      <h4 style="margin-top:6px">Dĺžka úsečky: |AB| = √((x₂ − x₁)² + (y₂ − y₁)²)</h4>
+      Os úsečky = kolmica na AB prechádzajúca stredom S
+    </div>
+    <div class="example"><strong>Príklad – os úsečky</strong>
+      A = [1; 2], B = [5; 6]<br>
+      S = [3; 4], &nbsp; |AB| = √(16 + 16) = 4√2<br>
+      Smernica AB: k_AB = (6−2)/(5−1) = 1 → smernica osi: k_os = −1<br>
+      Os: y − 4 = −1·(x − 3) → <strong>y = −x + 7</strong>
     </div>
   </div>
 </section>
@@ -2638,52 +2687,109 @@
     <div class="concept-name">Uhol dvoch priamok v rovine</div>
     <p>Uhol φ dvoch priamok so smernicami k₁ a k₂:</p>
     <div class="rule-box">
-      <h4>tg φ = |k₁ − k₂| / |1 + k₁ · k₂| &nbsp;(pre 1 + k₁k₂ ≠ 0)</h4>
-      Priamky sú kolmé, ak k₁ · k₂ = −1<br>
-      Priamky sú rovnobežné, ak k₁ = k₂
+      <h4>tan φ = |k₁ − k₂| / |1 + k₁ · k₂|, &nbsp; pre 1 + k₁ · k₂ ≠ 0</h4>
+      Ak 1 + k₁ · k₂ = 0 → priamky sú <strong>kolmé</strong> (φ = 90°)<br>
+      Ak k₁ = k₂ → priamky sú <strong>rovnobežné</strong> (φ = 0°)
+    </div>
+    <div class="example"><strong>Príklad 1 – ostrý uhol priamok</strong>
+      p: y = x + 2 → k₁ = 1 &nbsp; &nbsp; q: y = 3x − 1 → k₂ = 3<br>
+      tan φ = |1 − 3| / |1 + 1·3| = 2 / 4 = 0,5<br>
+      φ = arctan(0,5) ≈ <strong>26,6°</strong>
+    </div>
+    <div class="example"><strong>Príklad 2 – overenie kolmosti</strong>
+      p: y = 2x + 1 → k₁ = 2 &nbsp; &nbsp; q: y = −½x + 3 → k₂ = −½<br>
+      1 + k₁·k₂ = 1 + 2·(−½) = 1 − 1 = 0 → <strong>priamky sú kolmé (φ = 90°)</strong>
+    </div>
+  </div>
+
+  <div class="concept">
+    <div class="concept-name">Skalárny súčin vektorov (potrebný nástroj)</div>
+    <div class="rule-box">
+      <h4>u · v = u₁·v₁ + u₂·v₂ + u₃·v₃</h4>
+      <h4 style="margin-top:6px">|u| = √(u₁² + u₂² + u₃²)</h4>
+      Ak u · v = 0 → vektory sú <strong>kolmé</strong>
     </div>
     <div class="example"><strong>Príklad</strong>
-      k₁=1, k₂=3: tg φ = |1−3|/|1+3| = 2/4 = 0,5 → φ ≈ 26,6°
+      u = (2, −1, 3), v = (1, 4, 1)<br>
+      u · v = 2·1 + (−1)·4 + 3·1 = 2 − 4 + 3 = <strong>1</strong><br>
+      |u| = √(4 + 1 + 9) = √14 &nbsp; &nbsp; |v| = √(1 + 16 + 1) = √18 = 3√2
     </div>
   </div>
 
   <div class="concept">
     <div class="concept-name">Uhol dvoch priamok v priestore</div>
-    <p>Pre priamky so smerovými vektormi u⃗ a v⃗:</p>
+    <p>Pre priamky so smerovými vektormi <strong>u</strong> a <strong>v</strong>:</p>
     <div class="rule-box">
-      <h4>cos φ = |u⃗ · v⃗| / (|u⃗| · |v⃗|)</h4>
-      Uhol je vždy z intervalu ⟨0°, 90°⟩ (berieme ostrý uhol)
+      <h4>cos φ = |u · v| / (|u| · |v|)</h4>
+      Výsledok je vždy uhol z intervalu ⟨0°; 90°⟩ — berieme <em>ostrý</em> uhol (preto absolútna hodnota)
     </div>
-    <div class="example"><strong>Príklad</strong>
-      u⃗=(1,0,0), v⃗=(1,1,0): cos φ = |1|/(1·√2) = 1/√2 → φ = <strong>45°</strong>
+    <div class="example"><strong>Príklad 1 – súbežné priamky osi</strong>
+      p má smerový vektor u = (1, 0, 0) (os x)<br>
+      q má smerový vektor v = (0, 1, 0) (os y)<br>
+      cos φ = |0| / (1 · 1) = 0 → φ = <strong>90°</strong> (osi sú navzájom kolmé ✓)
+    </div>
+    <div class="example"><strong>Príklad 2 – šikmé priamky</strong>
+      u = (1, 2, 0), v = (3, 1, 0)<br>
+      u · v = 3 + 2 + 0 = 5<br>
+      |u| = √5, &nbsp; |v| = √10<br>
+      cos φ = 5 / (√5 · √10) = 5 / √50 = 5 / (5√2) = 1/√2<br>
+      φ = arccos(1/√2) = <strong>45°</strong>
     </div>
   </div>
 
   <div class="concept">
     <div class="concept-name">Uhol priamky a roviny</div>
-    <p>Uhol φ medzi priamkou (smerový vektor u⃗) a rovinou (normálový vektor n⃗):</p>
+    <p>Uhol φ medzi priamkou (smerový vektor <strong>u</strong>) a rovinou (normálový vektor <strong>n</strong>):</p>
     <div class="rule-box">
-      <h4>sin φ = |u⃗ · n⃗| / (|u⃗| · |n⃗|)</h4>
-      Ak φ = 90° → priamka je kolmá na rovinu &nbsp;·&nbsp; ak φ = 0° → priamka leží v rovine alebo je rovnobežná s ňou
+      <h4>sin φ = |u · n| / (|u| · |n|)</h4>
+      φ = 90° → priamka je <strong>kolmá</strong> na rovinu (u je rovnobežný s n)<br>
+      φ = 0° → priamka leží v rovine alebo je s ňou <strong>rovnobežná</strong> (u ⊥ n)
+    </div>
+    <div class="example"><strong>Príklad – uhol priamky a roviny xy</strong>
+      Rovinu xy opisuje normálový vektor n = (0, 0, 1)<br>
+      Priamka má smerový vektor u = (1, 1, 1)<br>
+      sin φ = |u · n| / (|u| · |n|) = |1| / (√3 · 1) = 1/√3<br>
+      φ = arcsin(1/√3) ≈ <strong>35,3°</strong>
     </div>
   </div>
 
   <div class="concept">
     <div class="concept-name">Uhol dvoch rovín (dvojstenný uhol)</div>
-    <p>Uhol φ dvoch rovín s normálovými vektormi n⃗₁ a n⃗₂:</p>
+    <p>Uhol φ dvoch rovín s normálovými vektormi <strong>n₁</strong> a <strong>n₂</strong>:</p>
     <div class="rule-box">
-      <h4>cos φ = |n⃗₁ · n⃗₂| / (|n⃗₁| · |n⃗₂|)</h4>
+      <h4>cos φ = |n₁ · n₂| / (|n₁| · |n₂|)</h4>
+      Roviny sú kolmé, ak n₁ · n₂ = 0<br>
+      Roviny sú rovnobežné, ak n₁ = t · n₂ pre nejaké t ∈ ℝ
     </div>
-    <div class="example"><strong>Príklad</strong>
-      α: 2x+y−z=0 (n⃗₁=(2,1,−1)) &nbsp;·&nbsp; β: x−y+z=0 (n⃗₂=(1,−1,1))<br>
-      n⃗₁·n⃗₂ = 2−1−1 = 0 → cos φ = 0 → φ = <strong>90°</strong> (roviny sú kolmé)
+    <div class="example"><strong>Príklad 1 – kolmé roviny</strong>
+      α: 2x + y − z = 0 → n₁ = (2, 1, −1)<br>
+      β: x − y + z = 0 → n₂ = (1, −1, 1)<br>
+      n₁ · n₂ = 2·1 + 1·(−1) + (−1)·1 = 2 − 1 − 1 = 0<br>
+      cos φ = 0 → φ = <strong>90° (roviny sú navzájom kolmé)</strong>
+    </div>
+    <div class="example"><strong>Príklad 2 – šikmé roviny</strong>
+      α: x + y + z = 5 → n₁ = (1, 1, 1)<br>
+      β: 2x − y + 0·z = 3 → n₂ = (2, −1, 0)<br>
+      n₁ · n₂ = 2 − 1 + 0 = 1<br>
+      |n₁| = √3, &nbsp; |n₂| = √5<br>
+      cos φ = 1 / (√3 · √5) = 1/√15<br>
+      φ = arccos(1/√15) ≈ <strong>75°</strong>
     </div>
   </div>
 
   <div class="concept">
-    <div class="concept-name">Priamka kolmá na rovinu</div>
-    <p>Priamka p je kolmá na rovinu α, ak je kolmá na <strong>každú</strong> priamku roviny α. V praxi stačí, aby bola kolmá na dve rôznobežné priamky v α.</p>
-    <p style="margin-top:6px">Smerový vektor priamky p je rovnobežný s normálovým vektorom roviny α.</p>
+    <div class="concept-name">Kolmosť priamky a roviny</div>
+    <p>Priamka p je kolmá na rovinu α, ak je kolmá na <strong>každú</strong> priamku ležiacu v rovine α.</p>
+    <div class="rule-box">
+      <h4>Podmienka: smerový vektor priamky u je rovnobežný s normálovým vektorom roviny n</h4>
+      Teda u = t · n pre nejaké t ≠ 0, čiže u a n majú rovnaký smer
+    </div>
+    <div class="example"><strong>Príklad – priamka kolmá na rovinu</strong>
+      Rovina α: 3x − y + 2z − 6 = 0 → n = (3, −1, 2)<br>
+      Priamka kolmá na α prechádzajúca bodom A = [1, 0, 2] má smerový vektor u = (3, −1, 2)<br>
+      Parametrické rovnice priamky:<br>
+      x = 1 + 3t, &nbsp; y = 0 − t, &nbsp; z = 2 + 2t, &nbsp; t ∈ ℝ
+    </div>
   </div>
 </section>
 
@@ -2703,15 +2809,15 @@
         <line x1="60" y1="25" x2="105" y2="25" stroke="#948979" stroke-width="1.2" stroke-dasharray="3,2"/>
         <text x="75" y="20" font-size="9" fill="#948979" font-family="serif" font-style="italic">r</text>
         <line x1="108" y1="25" x2="108" y2="85" stroke="#393e46" stroke-width="1.2" stroke-dasharray="3,2"/>
-        <text x="111" y="58" font-size="9" fill="#393e46" font-family="serif" font-style="italic">h</text>
+        <text x="111" y="58" font-size="9" fill="#393e46" font-family="serif" font-style="italic">v</text>
       </svg>
     </div>
     <div class="rule-box">
-      <h4>Povrch: S = 2πr² + 2πrh = 2πr(r + h)</h4>
-      <h4 style="margin-top:6px">Objem: V = πr²h</h4>
+      <h4>Povrch: S = 2πr² + 2πrv = 2πr(r + v)</h4>
+      <h4 style="margin-top:6px">Objem: V = πr²v</h4>
     </div>
     <div class="example"><strong>Príklad</strong>
-      r=3 cm, h=10 cm:<br>
+      r = 3 cm, v = 10 cm:<br>
       S = 2π·9 + 2π·3·10 = 18π + 60π = 78π ≈ <strong>245 cm²</strong><br>
       V = π·9·10 = 90π ≈ <strong>283 cm³</strong>
     </div>
@@ -2725,7 +2831,7 @@
         <line x1="60" y1="10" x2="15" y2="95" stroke="#948979" stroke-width="1.5"/>
         <line x1="60" y1="10" x2="105" y2="95" stroke="#948979" stroke-width="1.5"/>
         <line x1="60" y1="10" x2="60" y2="95" stroke="#dfd0b8" stroke-width="1.2" stroke-dasharray="3,2"/>
-        <text x="62" y="58" font-size="9" fill="#dfd0b8" font-family="serif" font-style="italic">h</text>
+        <text x="62" y="58" font-size="9" fill="#dfd0b8" font-family="serif" font-style="italic">v</text>
         <line x1="60" y1="95" x2="105" y2="95" stroke="#393e46" stroke-width="1.2" stroke-dasharray="3,2"/>
         <text x="80" y="108" font-size="9" fill="#393e46" font-family="serif" font-style="italic">r</text>
         <line x1="60" y1="10" x2="105" y2="95" stroke="#948979" stroke-width="1" stroke-dasharray="4,2"/>
@@ -2733,13 +2839,13 @@
         <circle cx="60" cy="10" r="3" fill="#948979"/>
       </svg>
     </div>
-    <p>s = √(r² + h²) je <strong>tvornica</strong> (šikmá výška) kužeľa.</p>
+    <p>s = √(r² + v²) je <strong>tvornica</strong> (šikmá výška) kužeľa.</p>
     <div class="rule-box">
       <h4>Povrch: S = πr² + πrs = πr(r + s)</h4>
-      <h4 style="margin-top:6px">Objem: V = (1/3)πr²h</h4>
+      <h4 style="margin-top:6px">Objem: V = (1/3)πr²v</h4>
     </div>
     <div class="example"><strong>Príklad</strong>
-      r=4 cm, h=3 cm → s=√(16+9)=5 cm<br>
+      r = 4 cm, v = 3 cm → s = √(16+9) = 5 cm<br>
       S = π·16 + π·4·5 = 16π + 20π = 36π ≈ <strong>113 cm²</strong><br>
       V = (1/3)π·16·3 = 16π ≈ <strong>50,3 cm³</strong>
     </div>
@@ -2772,8 +2878,8 @@
     <div class="table-wrap"><table>
       <thead><tr><th>Teleso</th><th>Povrch S</th><th>Objem V</th></tr></thead>
       <tbody>
-        <tr><td>Valec</td><td>2πr(r + h)</td><td>πr²h</td></tr>
-        <tr><td>Kužeľ</td><td>πr(r + s) &nbsp;kde s=√(r²+h²)</td><td>(1/3)πr²h</td></tr>
+        <tr><td>Valec</td><td>2πr(r + v)</td><td>πr²v</td></tr>
+        <tr><td>Kužeľ</td><td>πr(r + s) &nbsp;kde s = √(r² + v²)</td><td>(1/3)πr²v</td></tr>
         <tr><td>Guľa</td><td>4πr²</td><td>(4/3)πr³</td></tr>
       </tbody>
     </table></div>
